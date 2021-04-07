@@ -13,4 +13,12 @@ describe CreditCard do
       expect(@credit_card.balance).to eq test_value
     end
   end
+
+describe '#withdraw' do
+ it "deducts money from balance when you withdraw money" do
+   @credit_card.deposit(test_value)
+   @credit_card.withdraw(test_value)
+   expect(@credit_card.balance).to eq 0
+ end
+end
 end
