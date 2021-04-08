@@ -3,7 +3,7 @@ DEFAULTBALANCE = 0
 attr_reader :balance, :transactions
   def initialize(balance = DEFAULTBALANCE)
       @balance = balance
-      @transactions = []
+      @transactions = [["date || credit || debit || balance"]]
   end
 
   def deposit(deposit_value, date_deposit)
