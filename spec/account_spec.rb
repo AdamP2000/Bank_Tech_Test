@@ -18,19 +18,19 @@ describe Account do
     end
   end
 
-describe '#withdraw' do
- it "deducts money from balance when you withdraw money" do
-   @account.deposit(test_value, test_date)
-   @account.withdraw(test_value, test_date)
-   expect(@account.balance).to eq 0
- end
-end
+  describe '#withdraw' do
+    it "deducts money from balance when you withdraw money" do
+      @account.deposit(test_value, test_date)
+      @account.withdraw(test_value, test_date)
+      expect(@account.balance).to eq 0
+    end
+  end
 
-describe '#transactions' do
-it "shows the users transaction history" do
-  @account.deposit(test_value, test_date)
-  balance = @account.balance
-  expect(@account.transactions).to eq [["date || credit || debit || balance"],[test_date, test_value, 0, balance]]
-end
-end
+  describe '#transactions' do
+    it "shows the users transaction history" do
+      @account.deposit(test_value, test_date)
+      balance = @account.balance
+      expect(@account.transactions).to eq [["date || credit || debit || balance"],[test_date, test_value, 0, balance]]
+    end
+  end
 end

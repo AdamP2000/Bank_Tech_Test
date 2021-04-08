@@ -1,16 +1,16 @@
 require_relative 'account'
+
 class AccountStatement
   attr_accessor :account
+
   def initialize(account = Account.new)
     @account = account
   end
 
   def print_statement
-    index = 1
-    index_2 = 0
-    bank_statement = @account.transactions
-    for arrays in bank_statement
-        puts arrays.join(" || ")
-    end
+    bank_statements = @account.transactions
+    for bank_statement in bank_statements
+      puts bank_statement.join(" || ")
     end
   end
+end
