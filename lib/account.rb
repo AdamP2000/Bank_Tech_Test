@@ -8,12 +8,12 @@ attr_reader :balance, :transactions
 
   def deposit(deposit_value, date_deposit)
     @balance = @balance + deposit_value
-    @transactions << [date_deposit, deposit_value, @balance]
+    @transactions << [date_deposit, deposit_value, 0, @balance]
   end
 
   def withdraw(withdraw_value, date_withdrawal)
     @balance = @balance - withdraw_value
-    @transactions << [date_withdrawal, withdraw_value, @balance]
+    @transactions << [date_withdrawal, 0, withdraw_value, @balance]
   end
 
 end

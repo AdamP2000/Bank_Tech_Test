@@ -30,7 +30,7 @@ describe '#transactions' do
 it "shows the users transaction history" do
   @account.deposit(test_value, test_date)
   balance = @account.balance
-  expect(@account.transactions).to eq [["date || credit || debit || balance"],[test_date, test_value, balance]]
+  expect(@account.transactions).to eq [["date || credit || debit || balance"],[test_date, test_value, 0, balance]]
 end
 end
 end
