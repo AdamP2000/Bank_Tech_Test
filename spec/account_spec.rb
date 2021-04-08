@@ -25,4 +25,12 @@ describe '#withdraw' do
    expect(@account.balance).to eq 0
  end
 end
+
+describe '#transactions' do
+it "shows the users transaction history" do
+  @account.deposit(test_value, test_date)
+  balance = @account.balance
+  expect(@account.transactions).to eq [[test_date, test_value, balance]]
+end
+end
 end
