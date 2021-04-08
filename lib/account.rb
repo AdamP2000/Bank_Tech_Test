@@ -1,16 +1,19 @@
 class Account
 DEFAULTBALANCE = 0
-attr_reader :balance
+attr_reader :balance, :transactions
   def initialize(balance = DEFAULTBALANCE)
       @balance = balance
+      @transactions = []
   end
 
   def deposit(deposit_value, date_deposit)
     @balance = @balance + deposit_value
+    @transactions << [date_deposit, deposit_value, @balance]
   end
 
   def withdraw(withdraw_value, date_withdrawal)
     @balance = @balance - withdraw_value
+    @transactions << [date_withdrawal, withdraw_value, @balance]
   end
 
 end
